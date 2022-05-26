@@ -1,0 +1,454 @@
+:root
+{
+    --dark-color:#19283f;
+    --green-color:#33d1cc;
+    --section-color:#eff7fa;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+/* to top */
+
+/* to top */
+span.top
+{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: -50px;
+    background-color: var(--green-color);
+    font-weight: bold;
+    font-size: 1.7rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: ease-in-out 0.4s;
+    z-index: 10000;
+}
+span.top.show
+{
+    right: 20px;
+}
+span.show:hover
+{
+    box-shadow: 0 0 10px yellow;
+    color: var(--dark-color);
+    border-radius: 50%;
+}
+/* scroll bar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track-piece{
+    background-color: var(--green-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: #19283f80;
+    border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: yellow;
+}
+/* scroll bar */
+.main-title::after
+{
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: var(--green-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+}
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* start navbar */
+.navbar
+{
+    background-color: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link{
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover{
+    color: var(--green-color);
+}
+.navbar .navbar-toggler
+{
+    color: #ffffff;
+    font-size: 25px;
+    border-color: #ffffff;
+}
+.navbar .navbar-toggler[aria-expanded="true"]
+{
+    border-color: var(--green-color);
+    color: var(--green-color);
+}
+.navbar .navbar-toggler:focus
+{
+    box-shadow: none;
+}
+.search
+{
+   border-left: 1px solid var(--green-color); 
+}
+.search svg
+{
+    cursor: pointer;
+    color: var(--green-color);
+}
+.main-btn
+{
+    min-width: 110px;
+    min-height: 40px;
+    line-height: 25px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition:ease-in-out .3s;
+    border: 1px solid #33d1cc;
+    color: #fff;
+}
+.main-btn:hover , .stuff .btn-stuff:hover 
+{
+    background-color: #33d1cc;
+    border-color: #33d1cc;
+    color: var(--dark-color);
+    box-shadow: 0px 0px 10px #fff;
+    transform: scale(1.1);
+}
+/* end navbar */
+
+/* start landing */
+.landing
+{
+    background-color: var(--dark-color);
+    min-height: calc(100vh - 72px);
+}
+h1
+{
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.landing p
+{
+    letter-spacing: 1px;
+}
+.start
+{
+    width: 170px;
+}
+
+/* end landing */
+
+/* start features */
+.features .icon-holder
+{
+    height: 200px;
+}
+.features .icon-holder svg{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.features .icon-holder .number
+{
+    font-size: 12rem;
+    color: var(--section-color);
+}
+.features .icon-holder .icon
+{
+    color: var(--green-color);
+}
+.features h4
+{
+    color: var(--dark-color);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.features p
+{
+    font-weight: 800;
+    text-transform: capitalize;
+}
+.feet
+{
+    transition: ease-in-out .3s;
+}
+.feet:hover
+{
+    background-color: var(--green-color);
+    border-radius: 10px;
+    /* transform: scale(1.1); */
+    box-shadow: 0px 0px 10px var(--dark-color);
+}
+.feet:hover .icon
+{
+    color: var(--dark-color);
+}
+/* end features */
+
+/* start our-work */
+.our-work
+{
+    background-color: var(--section-color);
+}
+.our-work ul .active
+{
+    background-color: var(--dark-color);
+    color: var(--green-color);
+    box-shadow: 0px 0px 10px var(--dark-color);
+}
+.our-work ul li
+{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 4px;
+}
+.our-work ul li:not(.active):hover
+{
+    background-color: var(--dark-color);
+    color: var(--green-color);
+    box-shadow: 0px 0px 10px var(--dark-color);
+}
+.our-work .box
+{
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+}
+.our-work .box::before
+{
+    content: attr(data-work);
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background-color: #19283fb8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: translatey(calc(-100% - 5px));
+    transition: .3s;
+}
+.our-work .box:hover::before
+{
+    transform: translatey(0);
+}
+.our-work .want
+{
+    width: 200px;
+}
+/* end our-work */
+
+/* sart stuff */
+.stuff .description
+{
+    width: 400px;
+    text-transform: capitalize;
+    line-height: 2;
+    font-weight: 600;
+}
+.stuff h4
+{
+    color: #19283f;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.stuff .btn-stuff
+{
+    height: 50px;
+    background-color: var(--dark-color);
+    line-height: 35px;
+    border: none;
+}
+.stuff .btn-stuff:hover
+{
+    box-shadow: 0px 0px 10px var(--dark-color);
+}
+.stuff .lap:hover
+{
+margin-left: 70px;
+transition: ease-in-out 0.5s;
+}
+/* end stuff */
+
+/* start team */
+.our-team
+{
+    background-color: var(--section-color);
+}
+.our-team h2
+{
+    font-weight: bold;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.our-team .box h4
+{
+    background-color: var(--green-color);
+    letter-spacing: 2px;
+}
+.our-team .box
+{
+    position: relative;
+    overflow: hidden;
+}
+.our-team .box::before
+{
+    content: attr(data-work);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #19283fb8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .4s;
+    transform: translateX(-100%);
+}
+.our-team .box:hover::before
+{
+    transform: translatex(0);
+}
+.project
+{
+    background-color: var(--dark-color);
+}
+.project .proj
+{
+    width: 300px;
+    height: 60px;
+    line-height: 45px;
+    border-width: 2px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* start team */
+
+/* start blog */
+.btn-blog
+{
+    width: 200px;
+    height: 50px;
+    line-height: 35px;
+    color: var(--dark-color);
+}
+.btn-blog:hover
+{
+    box-shadow: 0 0 10px var(--green-color);
+    background-color: var(--dark-color);
+    color: #fff;
+    transition: ease-in-out 0.3s;
+}
+.blog .card.card-2
+{
+    margin-top: -7px;
+}
+/* end blog */
+
+/* start subscribe */
+.subscribe
+{
+    background-color: #ffc107;
+}
+.subscribe input[type="text"]
+{
+    border: none;
+    border-bottom: 1px solid #ffffff;
+}
+.subscribe input:focus
+{
+    outline: none;
+}
+.subscribe input::placeholder
+{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.subscribe input[type="submit"]
+{
+    background-color: var(--dark-color);
+    color: #ffffff;
+}
+.subscribe input[type="submit"]:hover
+{
+    background-color: #ffffff;
+    color: var(--green-color);
+    box-shadow: 0px 0px 10px var(--green-color);
+    transition: ease-in-out 0.3s;
+}
+/* end subscribe */
+
+/* start footer */
+.footer
+{
+    background-color: var(--dark-color);
+}
+.footer .copyright > span
+{
+    color: var(--green-color);
+}
+.footer .copyright div span
+{
+    color: yellow;
+}
+.footer .contact ul svg
+{
+    width: 20px;
+    height: 20px;
+}
+.footer .contact ul svg:hover
+{
+    transform: rotate(360deg);
+    transition: ease-in-out .7s;
+    background-color: var(--green-color);
+}
+.footer .facebook
+{
+    background-color: #1877f2;
+}
+.footer .twitter
+{
+    background-color: #1da1f2;
+}
+.footer .linkedin
+{
+    background-color: #0077b5;
+}
+.footer .youtube
+{
+    background-color: #ff0000;
+}
+/* end footer */
